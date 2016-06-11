@@ -1,0 +1,31 @@
+{
+  "name": "rnt-server",
+  "version": "1.0.0",
+  "description": "Reynolds Number Real Time Server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luigi Freitas",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "css-loader": "^0.23.1",
+    "express": "^4.13.4",
+    "inline-source-map": "^0.6.2",
+    "node-sass": "^3.7.0",
+    "path": "^0.12.7",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
+  }
+}

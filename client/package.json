@@ -1,0 +1,13 @@
+{
+  "name": "rnt-client",
+  "version": "1.0.0",
+  "description": "Reynolds Number Real Time Client",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luigi Freitas",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
