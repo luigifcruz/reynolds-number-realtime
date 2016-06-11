@@ -1,4 +1,4 @@
-$break-small: 320px;
+$break-small: 1300px;
 $break-large: 1024px;
 
 @mixin respond-to($media) {
@@ -45,5 +45,7 @@ $break-large: 1024px;
 }
 
 body {
-  font-family: 'Catamaran'
+  font-family: 'Open Sans';
+  background: #F2F2F2;
+  -webkit-font-smoothing: subpixel-antialiased;
 }

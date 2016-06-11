@@ -1,6 +1,6 @@
 @import 'Main.scss';
 
-.status {
+.Loading {
   width: 25vw;
   height: auto;
   @include center;
@@ -11,7 +11,7 @@
     color: #8F8F8F;
     font-size: 2.5vw;
   }
-  
+
   img {
     width: 10vw;
   }

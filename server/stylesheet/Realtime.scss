@@ -1,0 +1,60 @@
+@import 'Main.scss';
+
+.Realtime {
+  @include center;
+  width: 55vw;
+
+  .Meter {
+    width: 5vw;
+    height: 70vh;
+    float: left;
+    position: relative;
+    background: #bdc3c7;
+    margin-right: 6vw;
+    margin-top: -5.5vh;
+    border-radius: 10px;
+
+    .Fill {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      bottom: 0px;
+      background: #27ae60;
+      border-radius: 10px;
+      transition: width .1s;
+    }
+  }
+
+  .Data {
+    width: 30vw;
+
+    h1 {
+      font-weight: 400;
+      font-size: 2vw;
+      color: #696969;
+    }
+
+    h3 {
+      margin-top: -4vh;
+      font-weight: 100;
+      font-size: 7.5vw;
+      color: #474747;
+    }
+  }
+
+  .Medium {
+    width: 20vw;
+    float: left;
+
+    h1 {
+      font-size: 1.8vw;
+      color: #16a085;
+    }
+
+    h3 {
+      margin-top: -2vh;
+      font-size: 5.5vw;
+      color: #16a085;
+    }
+  }
+}

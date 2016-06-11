@@ -4,7 +4,9 @@ import '../stylesheet/App.scss'
 class App extends Component {
   render() {
     return (
-      <div>This is a react App.</div>
+      <div>
+        {React.cloneElement(this.props.children, {})}
+      </div>
     )
   }
 }
