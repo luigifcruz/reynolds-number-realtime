@@ -62,21 +62,25 @@ io.on('connect', function (socket) {
     state.available = true;
     state.reynolds = reynolds(data);
     state.total = total(data);
-    state.flow = data;
+    state.flow = round(data);
     state.height = height(data);
 
     io.sockets.emit('status', state);
   });
 });
 
+function round(number) {
+  return Math.round(number * 100) / 100;
+}
+
 function reynolds(flow) {
-  return flow;
+  return round(flow);
 }
 
 function total(flow) {
-  return state.total + flow;
+  return round(state.total + flow);
 }
 
 function height(flow) {
-  return state.total;
+  return round(flow * 6);
 }

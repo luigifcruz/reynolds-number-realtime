@@ -3,7 +3,7 @@
 const konfig = require('konfig')({ path: '../' });
 const io = require('socket.io-client');
 const GPIO = require('onoff').Gpio;
-const button = new GPIO(23, 'in', 'both');
+const button = new GPIO(konfig.app.pin, 'in', 'both');
 
 var socket = io.connect(konfig.app.domain);
 let ticks = [];
@@ -28,4 +28,4 @@ setInterval(() => {
   });
 
   socket.emit('clientDump', frequency / 7.5);
-}, 100);
+}, 150);
