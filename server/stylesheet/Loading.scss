@@ -4,12 +4,22 @@
   width: 25vw;
   height: auto;
   @include center;
-  padding-bottom: 3vw;
+  padding-bottom: 5vw;
 
   div {
     font-weight: 100;
     color: #8F8F8F;
     font-size: 2.5vw;
+  }
+
+  p {
+    font-weight: 600;
+    color: #28b463;
+    font-size: 1.1vw;
+  }
+
+  .neg {
+    color: #e74c3c;
   }
 
   img {

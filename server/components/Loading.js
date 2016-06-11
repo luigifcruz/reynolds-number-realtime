@@ -7,7 +7,11 @@ class Loading extends Component {
       <div className="Loading">
         <center>
           <img src="http://image000.flaticon.com/icons/svg/124/124588.svg"></img>
-          <div>Waiting Connection</div>
+          <div>Waiting Satellite</div>
+          {this.props.status ?
+            <p>CONNECTED WITH KIERA</p> :
+            <p className="neg">DISCONNECTED WITH KIERA</p>
+          }
         </center>
       </div>
     )

@@ -9,5 +9,8 @@
   "author": "Luigi Freitas",
   "license": "MIT",
   "dependencies": {
+    "konfig": "^0.2.1",
+    "onoff": "^1.1.1",
+    "socket.io-client": "^1.4.6"
   }
 }
