@@ -29,7 +29,11 @@ let state = {
   reynolds: 0,
   flow: 0,
   total: 0,
-  height: 0
+  height: 0,
+  readings: [{
+    flow: 0,
+    timestamp: new Date().getTime()
+  }]
 }
 
 console.log(`Server is up and running...`);
@@ -44,8 +48,12 @@ io.on('connect', function (socket) {
       state.available = false;
       state.socket = null;
       state.total = 0;
-      io.sockets.emit('status', state);
+      state.readings = [{
+        flow: 0,
+        timestamp: new Date().getTime()
+      }];
 
+      io.sockets.emit('status', state);
       console.log("Client hangout.");
     }
   });
@@ -61,7 +69,7 @@ io.on('connect', function (socket) {
   socket.on('clientDump', function (data) {
     state.available = true;
     state.reynolds = reynolds(data);
-    state.total = total(data);
+    state.total = round(total(data));
     state.flow = round(data);
     state.height = height(data);
 
@@ -74,11 +82,38 @@ function round(number) {
 }
 
 function reynolds(flow) {
-  return round(flow);
+  const density = 1000; // kg/m3
+  const viscosity = 0.001003; // Pa/s
+  const diameter = 0.0127; // m
+
+  let flowM3 = (flow / 1000) / 60;
+  let speed = flowM3 / (Math.PI * (diameter/2)*(diameter/2)) // m/s
+
+  let reynolds = (2 * diameter * density * speed) / viscosity;
+
+  return round(reynolds);
 }
 
 function total(flow) {
-  return round(state.total + flow);
+  let newReading = {
+    flow: flow,
+    timestamp: new Date().getTime()
+  }
+  state.readings.push(newReading);
+
+  if (flow != 0) {
+    let totalFlow = 0;
+    state.readings.map((time) => {
+      totalFlow += time.flow;
+    });
+
+    let averageFlow = totalFlow / state.readings.length;
+    let miliseconds = state.readings[state.readings.length - 1].timestamp - state.readings[0].timestamp;
+
+    return round(averageFlow) * round(miliseconds / 1000 / 60);
+  } else {
+    return state.total;
+  }
 }
 
 function height(flow) {

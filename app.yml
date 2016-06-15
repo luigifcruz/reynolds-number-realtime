@@ -1,4 +1,4 @@
 default:
   port: 5000
-  domain: http://192.168.25.209:5000
+  domain: http://192.168.100.92:5000
   pin: 23

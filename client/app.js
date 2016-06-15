@@ -28,4 +28,4 @@ setInterval(() => {
   });
 
   socket.emit('clientDump', frequency / 7.5);
-}, 150);
+}, 200);
